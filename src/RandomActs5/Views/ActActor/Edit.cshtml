@@ -1,0 +1,74 @@
+﻿@model RandomActs.Models.RandomActActor
+
+@{
+    ViewBag.Title = "Modify a Registration";
+}
+
+<h2>Modify a Registration</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Random Act-Actor</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.RandomActActorId)
+
+        <div class="form-group">
+            <div class="control-label col-md-2" style="font-weight:bold;">
+                Random Act
+                @Html.HiddenFor(model => model.RandomActId)
+            </div>
+            <div class="col-md-10">
+                <span style="color:blueviolet;">@Model.Act.Title</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2" style="font-weight:bold;">
+                Random Actor
+                @Html.HiddenFor(model => model.RandomActorId)
+            </div>
+            <div class="col-md-10">
+                <span style="color:blueviolet;">@Model.Actor.FullName</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WhatICanBring, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.WhatICanBring, new { style = "width: 400px" })
+                @Html.ValidationMessageFor(model => model.WhatICanBring)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Message, new { style = "width: 400px" })
+                @Html.ValidationMessageFor(model => model.Message)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WaitList, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.WaitList)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "AttendeeList", new { id = Model.RandomActId })
+</div>
+

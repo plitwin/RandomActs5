@@ -1,0 +1,56 @@
+﻿@model RandomActs.Models.RandomActActor
+
+@{
+    ViewBag.Title = "Delete a Actor from an Act";
+}
+
+<h2>Cancel a Registration</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Random Act-Actor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Act.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Act.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhatICanBring)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhatICanBring)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "AttendeeList", new { id = Model.RandomActId })
+        </div>
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RandomActs.Models.RandomActActor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Registered Attendees for @ViewBag.RandomActTitle</h2>
+<b>Max Volunteers:</b> @ViewBag.MaxActors / 
+<b>Registered:</b> @ViewBag.Registered /
+<b>Wait Listed:</b> @ViewBag.WaitListed
+<br /><br />
+
+<p>
+    @Html.ActionLink((bool)ViewBag.MaxedOut ? "Add to Wait List" : "New Registration",
+                     (bool)ViewBag.MaxedOut ? "WaitList" : "Register", 
+                     new { id = ViewBag.RandomActId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhatICanBring)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WaitList)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actor.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhatICanBring)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WaitList)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RandomActActorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RandomActActorId })
+        </td>
+    </tr>
+}
+
+</table>

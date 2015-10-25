@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
@@ -11,7 +7,7 @@ using Microsoft.Framework.Logging;
 using Microsoft.Data.Entity;
 using RandomActs.Models;
 
-namespace RandomActs5
+namespace RandomActs
 {
     public class Startup
     {

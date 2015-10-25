@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using RandomActs.Models;
 
-namespace RandomActs5.Migrations
+namespace RandomActs.Migrations
 {
     [DbContext(typeof(RAOKContext))]
     partial class RAOKContextModelSnapshot : ModelSnapshot

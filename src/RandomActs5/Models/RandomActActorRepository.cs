@@ -7,8 +7,12 @@ namespace RandomActs.Models
 { 
     public class RandomActActorRepository : IRandomActActorRepository
     {
-        RAOKContext context = new RAOKContext();
-
+        //RAOKContext context = new RAOKContext();
+        private RAOKContext context;
+        public RandomActActorRepository(RAOKContext raokContext)
+        {
+            context = raokContext;
+        }
         public IQueryable<RandomActActor> All
         {
             get { return context.RandomActActors; }

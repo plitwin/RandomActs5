@@ -2,13 +2,17 @@
 using Microsoft.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Collections.Generic;
 
 namespace RandomActs.Models
 { 
     public class RandomActRepository : IRandomActRepository
     {
-        RAOKContext context = new RAOKContext();
+        //RAOKContext context = new RAOKContext();
+        private RAOKContext context;
+        public RandomActRepository(RAOKContext raokContext)
+        {
+            context = raokContext;
+        }
 
         public IQueryable<RandomAct> All
         {

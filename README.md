@@ -1,7 +1,7 @@
 # RandomActs5
-ASP.NET 5 version of Random Acts project.
+ASP.NET 5 version of Random Acts project. Updated for RC1.
 
-This project is a demonstration project created using Beta 8 of ASP.NET 5, MVC 6, and Entity Framework 7. 
+This project is a demonstration project created using RC1 of ASP.NET 5, MVC 6, and Entity Framework 7. 
 it was developed by creating a new ASP.NET 5 project in Visual Studio 2015 and migrating pieces of the original 
 plitwin/RandomActs project (developed with ASP.NET 4.5, MVC 5, and Entity Framework 6) into it.
 
